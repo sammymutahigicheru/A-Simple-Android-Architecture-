@@ -1,6 +1,9 @@
 plugins {
     id ("com.android.application")
     id ("kotlin-android")
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
+    id("kotlin-android-extensions")
 }
 
 android {
@@ -38,6 +41,42 @@ dependencies {
     implementation ("androidx.appcompat:appcompat:1.2.0")
     implementation ("com.google.android.material:material:1.2.1")
     implementation ("androidx.constraintlayout:constraintlayout:2.0.4")
+    //Retrofit
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    api ("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2")
+
+    //Lifecycle
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.2.0")
+    implementation ("androidx.lifecycle:lifecycle-common-java8:2.2.0")
+    implementation ("androidx.lifecycle:lifecycle-extensions:2.2.0")
+
+    //Kotlin Coroutines
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
+
+    //Hilt
+    implementation ("com.google.dagger:hilt-android:2.28.1-alpha")
+    implementation ("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02")
+    kapt ("com.google.dagger:hilt-android-compiler:2.28.1-alpha")
+    kapt ("androidx.hilt:hilt-compiler:1.0.0-alpha02")
+
+    //Room
+    implementation ("androidx.room:room-runtime:2.2.5")
+    implementation ("androidx.room:room-ktx:2.2.5")
+    kapt ("androidx.room:room-compiler:2.2.5")
+
+    //Navigation
+    implementation ("androidx.navigation:navigation-fragment-ktx:2.3.2")
+    implementation ("androidx.navigation:navigation-ui-ktx:2.3.2")
+
+    //Glide
+    implementation ("com.github.bumptech.glide:glide:4.11.0")
+    kapt ("com.github.bumptech.glide:compiler:4.11.0")
+
+    //Timber
+    implementation ("com.jakewharton.timber:timber:4.7.1")
     //test
     testImplementation ("junit:junit:4.+")
     androidTestImplementation ("androidx.test.ext:junit:1.1.2")
