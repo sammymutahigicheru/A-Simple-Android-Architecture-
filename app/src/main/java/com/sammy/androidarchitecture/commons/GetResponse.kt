@@ -6,14 +6,14 @@ import com.sammy.androidarchitecture.commons.Resource.Status
 import com.sammy.androidarchitecture.commons.Resource.Status.*
 import kotlinx.coroutines.Dispatchers
 
-fun <A,T> performGetOperation(
-        networkCall: suspend () -> Resource<A>,
-        saveCallResult: suspend (A) -> Unit
+fun <T> performGetOperation(
+        networkCall: suspend () -> Resource<T>
 ):LiveData<Resource<T>> =
         liveData(Dispatchers.IO){
             val response = networkCall.invoke()
             if(response.status == SUCCESS){
-                saveCallResult(response.data!!)
+                emit(Resource.success(response.data!!))
+                //do db insertion
             }else if (response.status == ERROR){
                 emit(Resource.error(response.message!!))
             }
