@@ -7,5 +7,5 @@ import com.sammy.androidarchitecture.data.repository.CharacterRepository
 class CharactersViewModel @ViewModelInject constructor(
     private val characterRepository: CharacterRepository
 ):ViewModel(){
-    val getCharacters = characterRepository.getCharacters()
+    val characters = characterRepository.getCharacters()
 }
