@@ -4,8 +4,8 @@ import com.sammy.androidarchitecture.commons.Resource
 import retrofit2.Response
 import timber.log.Timber
 
-abstract class DataSource {
-    protected suspend fun <T> getResult(call: suspend () -> Response<T>): Resource<T> {
+abstract class BaseDataSource {
+    protected suspend fun <T> getResponse(call: suspend () -> Response<T>): Resource<T> {
         try {
             val response = call()
             if (response.isSuccessful) {
