@@ -2,7 +2,7 @@ package com.sammy.androidarchitecture.data.remote
 
 import javax.inject.Inject
 
-class CharactersDataSource @Inject constructor(
+class CharacterRemoteDataSource @Inject constructor(
         private val charactersApiService: CharactersApiService
 ):BaseDataSource(){
 
