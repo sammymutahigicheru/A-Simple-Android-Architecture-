@@ -1,4 +1,4 @@
-package com.sammy.androidarchitecture.data
+package com.sammy.androidarchitecture.data.model
 
 data class Location(
     val name: String,
