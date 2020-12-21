@@ -47,8 +47,6 @@ class CharactersFragment : Fragment() {
                }
                Resource.Status.ERROR ->
                    Log.e("CharactersFragment",it.message!!)
-                 //  Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
-
                Resource.Status.LOADING ->
                    progressBar.visibility = View.VISIBLE
            }
