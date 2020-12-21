@@ -10,4 +10,7 @@ class CharacterRepository @Inject constructor(
     fun getCharacters() = performGetOperation(
             networkCall = {charactersDataSource.getAllCharacters()}
     )
+    fun getCharacterById(id:Int) = performGetOperation(
+        networkCall = {charactersDataSource.getCharacterById(id)}
+    )
 }
