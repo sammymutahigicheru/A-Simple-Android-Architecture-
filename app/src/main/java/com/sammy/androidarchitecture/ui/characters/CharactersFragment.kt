@@ -8,9 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sammy.androidarchitecture.R
 import com.sammy.androidarchitecture.commons.Resource
@@ -65,7 +67,11 @@ class CharactersFragment : Fragment(),CharactersAdapter.CharacterItemListener {
     }
 
     override fun onClickedCharacter(characterId: Int) {
-        Toast.makeText(requireContext(),"Clicked: =>${characterId}",Toast.LENGTH_SHORT).show()
+        findNavController().navigate(
+            R.id.action_charactersFragment_to_characterDetailsFragment3,
+            bundleOf("id" to characterId)
+
+        )
     }
 
 }
