@@ -9,5 +9,13 @@
         android:id="@+id/charactersFragment"
         android:name="com.sammy.androidarchitecture.ui.characters.CharactersFragment"
         android:label="fragment_characters"
-        tools:layout="@layout/fragment_characters" />
+        tools:layout="@layout/fragment_characters" >
+        <action
+            android:id="@+id/action_charactersFragment_to_characterDetailsFragment3"
+            app:destination="@id/characterDetailsFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterDetailsFragment3"
+        android:name="com.sammy.androidarchitecture.ui.character_details.CharacterDetailsFragment"
+        android:label="CharacterDetailsFragment" />
 </navigation>
