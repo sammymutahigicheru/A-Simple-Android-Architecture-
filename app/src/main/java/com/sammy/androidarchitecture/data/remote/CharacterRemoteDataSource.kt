@@ -7,5 +7,6 @@ class CharacterRemoteDataSource @Inject constructor(
 ):BaseDataSource(){
 
     suspend fun getAllCharacters() = getResponse { charactersApiService.getAllCharacters() }
+    suspend fun getCharacterById(id:Int) = getResponse { charactersApiService.getCharacter(id) }
 
 }
