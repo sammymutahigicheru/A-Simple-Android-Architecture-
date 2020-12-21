@@ -6,10 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.sammy.androidarchitecture.R
 import com.sammy.androidarchitecture.commons.Resource
 import com.sammy.androidarchitecture.commons.autoCleared
@@ -18,9 +20,10 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_characters.*
 
 @AndroidEntryPoint
-class CharactersFragment : Fragment() {
+class CharactersFragment : Fragment(),CharactersAdapter.CharacterItemListener {
     private var binding:FragmentCharactersBinding by autoCleared()
     private val viewModel:CharactersViewModel by viewModels()
+    private lateinit var adapter: CharactersAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -35,22 +38,34 @@ class CharactersFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupRecyclerView()
         setUpObservers()
+    }
+
+    private fun setupRecyclerView() {
+        adapter = CharactersAdapter(this)
+        binding.charactersRv.layoutManager = LinearLayoutManager(requireContext())
+        binding.charactersRv.adapter = adapter
+
     }
 
     private fun setUpObservers() {
         viewModel.characters.observe(viewLifecycleOwner, {
            when(it.status){
                Resource.Status.SUCCESS -> {
-                   progressBar.visibility = View.GONE
-                   if (!it.data!!.results.isNullOrEmpty()) characters.text = it.data.results.toString()
+                   binding.progressBar.visibility = View.GONE
+                   if (!it.data!!.results.isNullOrEmpty()) adapter.setItems(ArrayList(it.data.results))
                }
                Resource.Status.ERROR ->
                    Log.e("CharactersFragment",it.message!!)
                Resource.Status.LOADING ->
-                   progressBar.visibility = View.VISIBLE
+                   binding.progressBar.visibility = View.VISIBLE
            }
         })
+    }
+
+    override fun onClickedCharacter(characterId: Int) {
+        Toast.makeText(requireContext(),"Clicked: =>${characterId}",Toast.LENGTH_SHORT).show()
     }
 
 }
