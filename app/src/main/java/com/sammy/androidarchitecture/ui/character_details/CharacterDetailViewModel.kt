@@ -1,5 +1,6 @@
 package com.sammy.androidarchitecture.ui.character_details
 
+import android.util.Log
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -13,11 +14,15 @@ class CharacterDetailViewModel @ViewModelInject constructor(
     private val repository: CharacterRepository
 ):ViewModel(){
     private val _id = MutableLiveData<Int>()
+
     private val _character = _id.switchMap { id ->
+        Log.e("Id","****Id**=>${id}")
         repository.getCharacterById(id)
     }
-    val character:LiveData<Resource<Result>> = _character
-    fun setId(id:Int){
+    val character: LiveData<Resource<Result>> = _character
+
+
+    fun start(id: Int) {
         _id.value = id
     }
 }

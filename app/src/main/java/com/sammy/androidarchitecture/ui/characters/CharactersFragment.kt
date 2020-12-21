@@ -70,7 +70,6 @@ class CharactersFragment : Fragment(),CharactersAdapter.CharacterItemListener {
         findNavController().navigate(
             R.id.action_charactersFragment_to_characterDetailsFragment3,
             bundleOf("id" to characterId)
-
         )
     }
 

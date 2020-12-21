@@ -1,6 +1,7 @@
 package com.sammy.androidarchitecture.ui.character_details
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -35,7 +36,10 @@ class CharacterDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        arguments?.getInt("id")?.let { viewModel.setId(id) }
+        val id = arguments?.getInt("id")
+        if(id != null){
+            viewModel.start(id)
+        }
         setObservers()
     }
 
@@ -48,7 +52,7 @@ class CharacterDetailsFragment : Fragment() {
                     binding.characterCl.visibility = View.VISIBLE
                 }
                 Resource.Status.ERROR ->
-                    Toast.makeText(activity, it.message, Toast.LENGTH_SHORT).show()
+                    Log.e("CharacterDetail",it.message!!)
 
                 Resource.Status.LOADING -> {
                     binding.progressBar.visibility = View.VISIBLE
