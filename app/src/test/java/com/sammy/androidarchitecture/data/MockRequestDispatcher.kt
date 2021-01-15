@@ -14,7 +14,7 @@ open class MockRequestDispatcher: Dispatcher() {
             CHARACTER -> {
                 MockResponse()
                     .setResponseCode(HttpURLConnection.HTTP_OK)
-                    .setBody(getJson("json/characters.json"))
+                    .setBody(getJson("json/character.json"))
             }
             else -> throw  throw IllegalArgumentException("Unknown Request Path ${request.path.toString()}")
         }
