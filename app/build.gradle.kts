@@ -85,4 +85,16 @@ dependencies {
     testImplementation ("junit:junit:4.+")
     androidTestImplementation ("androidx.test.ext:junit:1.1.2")
     androidTestImplementation ("androidx.test.espresso:espresso-core:3.3.0")
+    testImplementation("com.google.truth:truth:1.0.1")
+    // For Robolectric tests.
+    testImplementation ("com.google.dagger:hilt-android-testing:2.28-alpha")
+    // ...with Kotlin.
+    kaptTest ("com.google.dagger:hilt-android-compiler:2.28-alpha")
+    // For instrumented tests.
+    androidTestImplementation ("com.google.dagger:hilt-android-testing:2.28-alpha")
+    // ...with Kotlin.
+    kaptAndroidTest ("com.google.dagger:hilt-android-compiler:2.28-alpha")
+    testImplementation("io.mockk:mockk:1.10.0")
+    testImplementation("com.squareup.okhttp3:mockwebserver:4.8.1")
+    testImplementation("org.robolectric:robolectric:4.4-beta-1")
 }
