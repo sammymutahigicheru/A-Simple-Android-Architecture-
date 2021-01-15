@@ -2,15 +2,20 @@ package com.sammy.androidarchitecture
 
 import com.sammy.androidarchitecture.data.MockRequestDispatcher
 import com.sammy.androidarchitecture.data.remote.CharactersApiService
+import dagger.hilt.android.testing.HiltAndroidTest
+import dagger.hilt.android.testing.HiltTestApplication
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.After
 import org.junit.Before
+import org.robolectric.annotation.Config
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
+@HiltAndroidTest
+@Config(application = HiltTestApplication::class)
 open class BaseTest {
     // mock web server
     private lateinit var mockWebServer: MockWebServer
@@ -19,7 +24,7 @@ open class BaseTest {
     lateinit var charactersApiService: CharactersApiService
 
     @Before
-    fun setUp(){
+    open fun setUp(){
         mockWebServer = MockWebServer()
         mockWebServer.dispatcher = MockRequestDispatcher()
         mockWebServer.start()
