@@ -88,59 +88,30 @@ dependencies {
     //Timber
     implementation("com.jakewharton.timber:timber:4.7.1")
     /*
-    * Unit Tests
+    * JUnit
     * */
-    testImplementation("junit:junit:4.+")
-    testImplementation("com.google.truth:truth:1.0.1")
-    // For Robolectric tests.
-    testImplementation("com.google.dagger:hilt-android-testing:2.28-alpha")
-    // ...with Kotlin.
-    kaptTest("com.google.dagger:hilt-android-compiler:2.28-alpha")
-    testImplementation("io.mockk:mockk:1.10.0")
-    testImplementation("com.squareup.okhttp3:mockwebserver:4.8.1")
-    testImplementation("org.robolectric:robolectric:4.4-beta-1")
-
-
-    /*
-    * Instrumentation Tests
-    *
-    * */
-    androidTestImplementation("androidx.test:core:1.0.0")
-
-    // AndroidJUnitRunner and JUnit Rules
-    androidTestImplementation("androidx.test:runner:1.1.0")
-    androidTestImplementation("androidx.test:rules:1.1.0")
-
-    // Assertions
-    androidTestImplementation("androidx.test.ext:junit:1.0.0")
-    androidTestImplementation("androidx.test.ext:truth:1.0.0")
-    androidTestImplementation("com.google.truth:truth:0.42")
-
-    // Espresso dependencies
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.1.0")
-    androidTestImplementation("androidx.test.espresso:espresso-contrib:3.1.0")
-    androidTestImplementation("androidx.test.espresso:espresso-intents:3.1.0")
-    androidTestImplementation("androidx.test.espresso:espresso-accessibility:3.1.0")
-    androidTestImplementation("androidx.test.espresso:espresso-web:3.1.0")
-    androidTestImplementation("androidx.test.espresso.idling:idling-concurrent:3.1.0")
-    //espresso idling resource
-    androidTestImplementation("androidx.test.espresso:espresso-idling-resource:3.1.0")
-    androidTestImplementation("com.jakewharton.espresso:okhttp3-idling-resource:1.0.0")
-
-    //Navigation and Fragments
-    debugImplementation("androidx.fragment:fragment-testing:1.2.5")
-    androidTestImplementation("androidx.navigation:navigation-testing:2.3.2")
-
-    //Arch test
-    androidTestImplementation("androidx.arch.core:core-testing:2.1.0")
-
+    // Required -- JUnit 4 framework
+    testImplementation ("junit:junit:4.12")
+    // Optional -- Robolectric environment
+    testImplementation ("androidx.test:core:1.0.0")
+    // Optional -- Mockito framework
+    testImplementation ("org.mockito:mockito-core:1.10.19")
+   /*
+   * Tests
+   * */
     //Hilt
-    androidTestImplementation("com.google.dagger:hilt-android-testing:2.28-alpha")
-    kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.28-alpha")
+    // For Robolectric tests.
+    testImplementation ("com.google.dagger:hilt-android-testing:2.28-alpha")
+    // ...with Kotlin.
+    kaptTest ("com.google.dagger:hilt-android-compiler:2.28-alpha")
 
-    //Mockito
-    androidTestImplementation("org.mockito:mockito-core:2.19.0")
-    androidTestImplementation("org.mockito:mockito-android:2.19.0")
-    androidTestImplementation("com.squareup.okhttp3:mockwebserver:4.8.1")
+
+    // For instrumented tests.
+    androidTestImplementation ("com.google.dagger:hilt-android-testing:2.28-alpha")
+    // ...with Kotlin.
+    kaptAndroidTest ("com.google.dagger:hilt-android-compiler:2.28-alpha")
+
+    //fragment tests
+    debugImplementation ("androidx.fragment:fragment-testing:1.2.5")
 
 }
