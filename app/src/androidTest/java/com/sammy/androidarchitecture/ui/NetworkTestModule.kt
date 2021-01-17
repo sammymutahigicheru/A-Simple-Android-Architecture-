@@ -1,4 +1,4 @@
-package com.sammy.androidarchitecture.di
+package com.sammy.androidarchitecture.ui
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -17,9 +17,9 @@ object NetworkTestModule {
     @Singleton
     @Provides
     fun provideRetrofit(gson: Gson) : Retrofit = Retrofit.Builder()
-        .baseUrl(" http://127.0.0.1:58569/")
-        .addConverterFactory(GsonConverterFactory.create(gson))
-        .build()
+            .baseUrl("http://127.0.0.1:8080")
+            .addConverterFactory(GsonConverterFactory.create(gson))
+            .build()
 
     @Provides
     fun provideGson(): Gson = GsonBuilder().create()

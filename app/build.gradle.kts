@@ -16,8 +16,8 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-//        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        testInstrumentationRunner = "com.sammy.androidarchitecture.runner.CharactersTestRunner"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.sammy.androidarchitecture.MockTestRunner"
     }
 
     buildTypes {

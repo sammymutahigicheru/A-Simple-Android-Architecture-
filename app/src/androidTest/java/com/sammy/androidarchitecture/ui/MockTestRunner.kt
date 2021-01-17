@@ -1,10 +1,12 @@
-package com.sammy.androidarchitecture
+package com.sammy.androidarchitecture.ui
 
 import android.app.Application
 import android.content.Context
 import androidx.test.runner.AndroidJUnitRunner
 
-class CharactersTestRunner : AndroidJUnitRunner() {
+
+class MockTestRunner : AndroidJUnitRunner() {
+
     override fun newApplication(
         cl: ClassLoader?,
         className: String?,
