@@ -16,7 +16,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+//        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         testInstrumentationRunner = "com.sammy.androidarchitecture.runner.CharactersTestRunner"
     }
 
@@ -139,8 +139,8 @@ dependencies {
     kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.28-alpha")
 
     //Mockito
-    androidTestImplementation("org.mockito:mockito-core:1.10.0")
-    androidTestImplementation("org.mockito:mockito-android:1.10.0")
+    androidTestImplementation("org.mockito:mockito-core:2.19.0")
+    androidTestImplementation("org.mockito:mockito-android:2.19.0")
     androidTestImplementation("com.squareup.okhttp3:mockwebserver:4.8.1")
 
 }
