@@ -12,7 +12,7 @@ class MainTest {
     var hiltRule = HiltAndroidRule(this)
     @Before
     fun init(){
-
+        hiltRule.inject()
     }
     @Test
     fun someTest(){

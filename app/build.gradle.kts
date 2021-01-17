@@ -39,6 +39,9 @@ android {
     buildFeatures {
         dataBinding = true
     }
+    configurations.all {
+        resolutionStrategy.force("com.google.code.findbugs:jsr305:3.0.0")
+    }
 }
 
 dependencies {
@@ -91,14 +94,17 @@ dependencies {
     * JUnit
     * */
     // Required -- JUnit 4 framework
-    testImplementation ("junit:junit:4.12")
+    testImplementation ("junit:junit:4.13.1")
     // Optional -- Robolectric environment
-    testImplementation ("androidx.test:core:1.0.0")
+    testImplementation ("androidx.test:core:1.3.0")
     // Optional -- Mockito framework
-    testImplementation ("org.mockito:mockito-core:1.10.19")
+    testImplementation ("org.mockito:mockito-core:2.19.0")
    /*
    * Tests
    * */
+    androidTestImplementation ("junit:junit:4.13.1")
+    androidTestImplementation("androidx.test.ext:junit:1.1.2")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
     //Hilt
     // For Robolectric tests.
     testImplementation ("com.google.dagger:hilt-android-testing:2.28-alpha")
