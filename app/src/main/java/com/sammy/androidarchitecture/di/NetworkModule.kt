@@ -2,7 +2,7 @@ package com.sammy.androidarchitecture.di
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.sammy.androidarchitecture.data.remote.CharactersApiService
+import com.sammy.androidarchitecture.network.CharactersApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,5 +25,6 @@ object NetworkModule {
     fun provideGson(): Gson = GsonBuilder().create()
 
     @Provides
-    fun provideCharacterService(retrofit: Retrofit): CharactersApiService = retrofit.create(CharactersApiService::class.java)
+    fun provideCharacterService(retrofit: Retrofit): CharactersApiService = retrofit.create(
+        CharactersApiService::class.java)
 }

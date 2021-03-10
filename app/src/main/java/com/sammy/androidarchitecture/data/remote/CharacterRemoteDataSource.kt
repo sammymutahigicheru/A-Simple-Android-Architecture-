@@ -1,5 +1,6 @@
 package com.sammy.androidarchitecture.data.remote
 
+import com.sammy.androidarchitecture.network.CharactersApiService
 import javax.inject.Inject
 
 class CharacterRemoteDataSource @Inject constructor(

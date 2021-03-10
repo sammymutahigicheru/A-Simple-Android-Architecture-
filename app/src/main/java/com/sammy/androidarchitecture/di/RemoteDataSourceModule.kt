@@ -1,7 +1,7 @@
 package com.sammy.androidarchitecture.di
 
 import com.sammy.androidarchitecture.data.remote.CharacterRemoteDataSource
-import com.sammy.androidarchitecture.data.remote.CharactersApiService
+import com.sammy.androidarchitecture.network.CharactersApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
