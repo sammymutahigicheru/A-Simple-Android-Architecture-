@@ -7,7 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
 import com.sammy.androidarchitecture.commons.Resource
-import com.sammy.androidarchitecture.data.model.Result
+import com.sammy.androidarchitecture.network.model.Result
 import com.sammy.androidarchitecture.data.repository.CharacterRepository
 
 class CharacterDetailViewModel @ViewModelInject constructor(

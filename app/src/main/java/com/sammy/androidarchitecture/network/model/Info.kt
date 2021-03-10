@@ -1,4 +1,4 @@
-package com.sammy.androidarchitecture.data.model
+package com.sammy.androidarchitecture.network.model
 
 data class Info(
     val count: Int,

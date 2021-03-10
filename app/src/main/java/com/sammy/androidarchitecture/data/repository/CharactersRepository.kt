@@ -1,8 +1,7 @@
 package com.sammy.androidarchitecture.data.repository
 
 import com.sammy.androidarchitecture.data.mappers.toCharcters
-import com.sammy.androidarchitecture.data.model.Character
-import com.sammy.androidarchitecture.data.model.Result
+import com.sammy.androidarchitecture.network.model.Character
 import com.sammy.androidarchitecture.data.remote.CharactersApiService
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

@@ -13,7 +13,7 @@ import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.sammy.androidarchitecture.R
 import com.sammy.androidarchitecture.commons.Resource
 import com.sammy.androidarchitecture.commons.autoCleared
-import com.sammy.androidarchitecture.data.model.Result
+import com.sammy.androidarchitecture.network.model.Result
 import com.sammy.androidarchitecture.databinding.FragmentCharacterDetailsBinding
 import dagger.hilt.android.AndroidEntryPoint
 
